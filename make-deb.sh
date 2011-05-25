@@ -3,7 +3,7 @@
 export PYTHONPATH=`pwd`:$PYTHONPATH
 VERSION=`python -c "import quantities; print quantities.__version__,"`
 which py2dsc || { echo "stdeb not installed. Run 'sudo apt-get install python-stdeb' before retrying."; exit; }
-rm -r dist
+./clean.sh
 python setup.py sdist &&
 cd dist &&
 py2dsc quantities-$VERSION.tar.gz &&
